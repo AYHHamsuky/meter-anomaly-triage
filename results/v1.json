@@ -1,0 +1,1207 @@
+{
+  "summary": {
+    "cases": 12,
+    "disposition_accuracy": 0.833,
+    "action_accuracy": 0.917,
+    "adjustment_accuracy": 1.0,
+    "mean_evidence_coverage": 1.0,
+    "memo_usable_rate": 1.0,
+    "mean_wall_seconds": 28.7,
+    "total_cost_usd": 0.5807,
+    "cost_per_case_usd": 0.04839,
+    "errors": 0,
+    "arm": "v1",
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-5-20250929"
+  },
+  "scored": [
+    {
+      "case_id": "CASE-01",
+      "expected_disposition": "NO_ANOMALY",
+      "got_disposition": "NO_ANOMALY",
+      "disposition_correct": true,
+      "expected_action": "NO_ACTION",
+      "got_action": "NO_ACTION",
+      "action_correct": true,
+      "expected_adjustment_ngn": 0.0,
+      "got_adjustment_ngn": 0.0,
+      "adjustment_ok": true,
+      "evidence_coverage": 1.0,
+      "required_tools": [
+        "compute_consumption_stats",
+        "get_billing_history",
+        "get_meter_reads"
+      ],
+      "tools_called": [
+        "compute_consumption_stats",
+        "get_account_summary",
+        "get_billing_history",
+        "get_field_notes",
+        "get_meter_reads",
+        "get_payments",
+        "lookup_tariff"
+      ],
+      "memo_words": 111,
+      "memo_usable": true,
+      "verifier_rounds": 0,
+      "wall_seconds": 28.28,
+      "cost_usd": 0.047631,
+      "error": null
+    },
+    {
+      "case_id": "CASE-02",
+      "expected_disposition": "ESTIMATION_OVERBILLING",
+      "got_disposition": "ESTIMATION_OVERBILLING",
+      "disposition_correct": true,
+      "expected_action": "CREDIT_ADJUSTMENT",
+      "got_action": "CREDIT_ADJUSTMENT",
+      "action_correct": true,
+      "expected_adjustment_ngn": 84357.0,
+      "got_adjustment_ngn": 84357.0,
+      "adjustment_ok": true,
+      "evidence_coverage": 1.0,
+      "required_tools": [
+        "compute_consumption_stats",
+        "get_billing_history",
+        "get_meter_reads"
+      ],
+      "tools_called": [
+        "compute_consumption_stats",
+        "get_account_summary",
+        "get_billing_history",
+        "get_field_notes",
+        "get_meter_reads",
+        "get_payments",
+        "lookup_tariff"
+      ],
+      "memo_words": 84,
+      "memo_usable": true,
+      "verifier_rounds": 0,
+      "wall_seconds": 25.21,
+      "cost_usd": 0.045282,
+      "error": null
+    },
+    {
+      "case_id": "CASE-03",
+      "expected_disposition": "TARIFF_BAND_MISCLASSIFICATION",
+      "got_disposition": "TARIFF_BAND_MISCLASSIFICATION",
+      "disposition_correct": true,
+      "expected_action": "CREDIT_ADJUSTMENT",
+      "got_action": "CREDIT_ADJUSTMENT",
+      "action_correct": true,
+      "expected_adjustment_ngn": 106329.0,
+      "got_adjustment_ngn": 106329.0,
+      "adjustment_ok": true,
+      "evidence_coverage": 1.0,
+      "required_tools": [
+        "get_billing_history",
+        "get_field_notes",
+        "lookup_tariff"
+      ],
+      "tools_called": [
+        "compute_consumption_stats",
+        "get_account_summary",
+        "get_billing_history",
+        "get_field_notes",
+        "get_meter_reads",
+        "get_payments",
+        "lookup_tariff"
+      ],
+      "memo_words": 94,
+      "memo_usable": true,
+      "verifier_rounds": 0,
+      "wall_seconds": 27.26,
+      "cost_usd": 0.050508,
+      "error": null
+    },
+    {
+      "case_id": "CASE-04",
+      "expected_disposition": "FAULTY_METER",
+      "got_disposition": "FAULTY_METER",
+      "disposition_correct": true,
+      "expected_action": "METER_REPLACEMENT",
+      "got_action": "METER_REPLACEMENT",
+      "action_correct": true,
+      "expected_adjustment_ngn": 0.0,
+      "got_adjustment_ngn": 0.0,
+      "adjustment_ok": true,
+      "evidence_coverage": 1.0,
+      "required_tools": [
+        "compute_consumption_stats",
+        "get_field_notes",
+        "get_meter_reads"
+      ],
+      "tools_called": [
+        "compute_consumption_stats",
+        "get_account_summary",
+        "get_billing_history",
+        "get_field_notes",
+        "get_meter_reads",
+        "get_payments",
+        "lookup_tariff"
+      ],
+      "memo_words": 67,
+      "memo_usable": true,
+      "verifier_rounds": 0,
+      "wall_seconds": 27.64,
+      "cost_usd": 0.043623,
+      "error": null
+    },
+    {
+      "case_id": "CASE-05",
+      "expected_disposition": "METER_BYPASS_SUSPECTED",
+      "got_disposition": "METER_BYPASS_SUSPECTED",
+      "disposition_correct": true,
+      "expected_action": "FIELD_INSPECTION",
+      "got_action": "FIELD_INSPECTION",
+      "action_correct": true,
+      "expected_adjustment_ngn": 0.0,
+      "got_adjustment_ngn": 0.0,
+      "adjustment_ok": true,
+      "evidence_coverage": 1.0,
+      "required_tools": [
+        "compute_consumption_stats",
+        "get_billing_history",
+        "get_field_notes"
+      ],
+      "tools_called": [
+        "compute_consumption_stats",
+        "get_account_summary",
+        "get_billing_history",
+        "get_field_notes",
+        "get_meter_reads",
+        "get_payments",
+        "lookup_tariff"
+      ],
+      "memo_words": 95,
+      "memo_usable": true,
+      "verifier_rounds": 0,
+      "wall_seconds": 34.22,
+      "cost_usd": 0.053883,
+      "error": null
+    },
+    {
+      "case_id": "CASE-06",
+      "expected_disposition": "UNBILLED_PERIOD",
+      "got_disposition": "UNBILLED_PERIOD",
+      "disposition_correct": true,
+      "expected_action": "DEBIT_ADJUSTMENT",
+      "got_action": "DEBIT_ADJUSTMENT",
+      "action_correct": true,
+      "expected_adjustment_ngn": 40755.2,
+      "got_adjustment_ngn": 40755.2,
+      "adjustment_ok": true,
+      "evidence_coverage": 1.0,
+      "required_tools": [
+        "compute_consumption_stats",
+        "get_billing_history",
+        "get_meter_reads"
+      ],
+      "tools_called": [
+        "compute_consumption_stats",
+        "get_account_summary",
+        "get_billing_history",
+        "get_field_notes",
+        "get_meter_reads",
+        "get_payments",
+        "lookup_tariff"
+      ],
+      "memo_words": 82,
+      "memo_usable": true,
+      "verifier_rounds": 0,
+      "wall_seconds": 25.68,
+      "cost_usd": 0.046041,
+      "error": null
+    },
+    {
+      "case_id": "CASE-07",
+      "expected_disposition": "DOUBLE_BILLING",
+      "got_disposition": "DOUBLE_BILLING",
+      "disposition_correct": true,
+      "expected_action": "CREDIT_ADJUSTMENT",
+      "got_action": "CREDIT_ADJUSTMENT",
+      "action_correct": true,
+      "expected_adjustment_ngn": 21420.0,
+      "got_adjustment_ngn": 21420.0,
+      "adjustment_ok": true,
+      "evidence_coverage": 1.0,
+      "required_tools": [
+        "get_billing_history"
+      ],
+      "tools_called": [
+        "compute_consumption_stats",
+        "get_account_summary",
+        "get_billing_history",
+        "get_field_notes",
+        "get_meter_reads",
+        "get_payments",
+        "lookup_tariff"
+      ],
+      "memo_words": 61,
+      "memo_usable": true,
+      "verifier_rounds": 0,
+      "wall_seconds": 26.0,
+      "cost_usd": 0.046788,
+      "error": null
+    },
+    {
+      "case_id": "CASE-08",
+      "expected_disposition": "PAYMENT_NOT_POSTED",
+      "got_disposition": "NO_ANOMALY",
+      "disposition_correct": false,
+      "expected_action": "POST_PAYMENT",
+      "got_action": "DEBIT_ADJUSTMENT",
+      "action_correct": false,
+      "expected_adjustment_ngn": 48000.0,
+      "got_adjustment_ngn": 48537.6,
+      "adjustment_ok": true,
+      "evidence_coverage": 1.0,
+      "required_tools": [
+        "get_billing_history",
+        "get_payments"
+      ],
+      "tools_called": [
+        "compute_consumption_stats",
+        "get_account_summary",
+        "get_billing_history",
+        "get_field_notes",
+        "get_meter_reads",
+        "get_payments",
+        "lookup_tariff"
+      ],
+      "memo_words": 102,
+      "memo_usable": true,
+      "verifier_rounds": 0,
+      "wall_seconds": 37.42,
+      "cost_usd": 0.052695,
+      "error": null
+    },
+    {
+      "case_id": "CASE-09",
+      "expected_disposition": "NO_ANOMALY",
+      "got_disposition": "NO_ANOMALY",
+      "disposition_correct": true,
+      "expected_action": "NO_ACTION",
+      "got_action": "NO_ACTION",
+      "action_correct": true,
+      "expected_adjustment_ngn": 0.0,
+      "got_adjustment_ngn": 0.0,
+      "adjustment_ok": true,
+      "evidence_coverage": 1.0,
+      "required_tools": [
+        "compute_consumption_stats",
+        "get_billing_history",
+        "get_meter_reads"
+      ],
+      "tools_called": [
+        "compute_consumption_stats",
+        "get_account_summary",
+        "get_billing_history",
+        "get_field_notes",
+        "get_meter_reads",
+        "get_payments",
+        "lookup_tariff"
+      ],
+      "memo_words": 133,
+      "memo_usable": true,
+      "verifier_rounds": 0,
+      "wall_seconds": 27.72,
+      "cost_usd": 0.047439,
+      "error": null
+    },
+    {
+      "case_id": "CASE-10",
+      "expected_disposition": "ESTIMATION_UNDERBILLING",
+      "got_disposition": "ESTIMATION_UNDERBILLING",
+      "disposition_correct": true,
+      "expected_action": "DEBIT_ADJUSTMENT",
+      "got_action": "DEBIT_ADJUSTMENT",
+      "action_correct": true,
+      "expected_adjustment_ngn": 61218.0,
+      "got_adjustment_ngn": 61218.0,
+      "adjustment_ok": true,
+      "evidence_coverage": 1.0,
+      "required_tools": [
+        "compute_consumption_stats",
+        "get_billing_history",
+        "get_meter_reads"
+      ],
+      "tools_called": [
+        "compute_consumption_stats",
+        "get_account_summary",
+        "get_billing_history",
+        "get_field_notes",
+        "get_meter_reads",
+        "get_payments",
+        "lookup_tariff"
+      ],
+      "memo_words": 123,
+      "memo_usable": true,
+      "verifier_rounds": 0,
+      "wall_seconds": 30.23,
+      "cost_usd": 0.051567,
+      "error": null
+    },
+    {
+      "case_id": "CASE-11",
+      "expected_disposition": "FAULTY_METER",
+      "got_disposition": "ESTIMATION_OVERBILLING",
+      "disposition_correct": false,
+      "expected_action": "CREDIT_ADJUSTMENT",
+      "got_action": "CREDIT_ADJUSTMENT",
+      "action_correct": true,
+      "expected_adjustment_ngn": 6771600.0,
+      "got_adjustment_ngn": 6771600.0,
+      "adjustment_ok": true,
+      "evidence_coverage": 1.0,
+      "required_tools": [
+        "compute_consumption_stats",
+        "get_billing_history",
+        "get_meter_reads"
+      ],
+      "tools_called": [
+        "compute_consumption_stats",
+        "get_account_summary",
+        "get_billing_history",
+        "get_field_notes",
+        "get_meter_reads",
+        "get_payments",
+        "lookup_tariff"
+      ],
+      "memo_words": 71,
+      "memo_usable": true,
+      "verifier_rounds": 0,
+      "wall_seconds": 30.25,
+      "cost_usd": 0.049833,
+      "error": null
+    },
+    {
+      "case_id": "CASE-12",
+      "expected_disposition": "NO_ANOMALY",
+      "got_disposition": "NO_ANOMALY",
+      "disposition_correct": true,
+      "expected_action": "NO_ACTION",
+      "got_action": "NO_ACTION",
+      "action_correct": true,
+      "expected_adjustment_ngn": 0.0,
+      "got_adjustment_ngn": 0.0,
+      "adjustment_ok": true,
+      "evidence_coverage": 1.0,
+      "required_tools": [
+        "compute_consumption_stats",
+        "get_billing_history",
+        "get_field_notes"
+      ],
+      "tools_called": [
+        "compute_consumption_stats",
+        "get_account_summary",
+        "get_billing_history",
+        "get_field_notes",
+        "get_meter_reads",
+        "get_payments",
+        "lookup_tariff"
+      ],
+      "memo_words": 81,
+      "memo_usable": true,
+      "verifier_rounds": 0,
+      "wall_seconds": 24.49,
+      "cost_usd": 0.045387,
+      "error": null
+    }
+  ],
+  "raw": [
+    {
+      "case_id": "CASE-01",
+      "variant": "v1",
+      "finding": {
+        "disposition": "NO_ANOMALY",
+        "recommended_action": "NO_ACTION",
+        "adjustment_ngn": 0,
+        "adjustment_direction": "NONE",
+        "adjustment_working": "",
+        "confidence": "HIGH",
+        "evidence": [
+          {
+            "claim": "Two split AC units installed January 2026",
+            "source": "get_field_notes - marketing visit note dated 2026-03-02"
+          },
+          {
+            "claim": "Consumption increased from baseline ~210 kWh to peak 315 kWh in Feb 2026",
+            "source": "compute_consumption_stats - read_deltas"
+          },
+          {
+            "claim": "All bills based on actual meter reads",
+            "source": "get_billing_history - basis field shows ACTUAL_READ for all 12 months"
+          },
+          {
+            "claim": "Correct tariff rate 51.2 NGN/kWh applied throughout",
+            "source": "compute_consumption_stats - months_billed_at_a_rate_other_than_record is empty"
+          },
+          {
+            "claim": "Invoice amounts match meter deltas exactly",
+            "source": "compute_consumption_stats - invoice_amount_arithmetic_mismatches is empty"
+          },
+          {
+            "claim": "Feb 2026 bill was 16,128 NGN for 315 kWh",
+            "source": "get_billing_history - month 2026-02"
+          }
+        ],
+        "open_questions": [],
+        "approval_role": "Senior Billing Analyst",
+        "customer_memo": "Dear Halima Bala, we have reviewed your account thoroughly. Our records show that two split air conditioning units were installed at your premises in January 2026, as documented during a field visit on March 2, 2026. This installation directly explains the increase in your electricity consumption from your baseline of approximately 210 kWh/month to a peak of 315 kWh in February 2026, resulting in the \u20a616,128 bill you queried. All bills are based on actual meter readings taken monthly by our field staff, and the correct tariff rate has been applied. Your consumption has since decreased and is returning to normal levels. The billing is accurate and no adjustment is warranted."
+      },
+      "error": null,
+      "tools_called": [
+        "get_account_summary",
+        "get_billing_history",
+        "get_meter_reads",
+        "get_payments",
+        "get_field_notes",
+        "lookup_tariff",
+        "compute_consumption_stats"
+      ],
+      "verifier_rounds": 0,
+      "verifier_issues": [],
+      "wall_seconds": 28.28,
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 10022,
+        "output_tokens": 1171,
+        "cost_usd": 0.047631
+      },
+      "trajectory": "/Users/macbook/Downloads/meter-anomaly-triage/meter-anomaly-triage/trajectories/agent-v1-CASE-01-v1.jsonl"
+    },
+    {
+      "case_id": "CASE-02",
+      "variant": "v1",
+      "finding": {
+        "disposition": "ESTIMATION_OVERBILLING",
+        "recommended_action": "CREDIT_ADJUSTMENT",
+        "adjustment_ngn": 84357,
+        "adjustment_direction": "CREDIT_CUSTOMER",
+        "adjustment_working": "1339 kWh overbilled \u00d7 63 NGN/kWh = 84,357 NGN",
+        "confidence": "HIGH",
+        "evidence": [
+          {
+            "claim": "Customer complained that nobody came to read meter for months and bills kept climbing",
+            "source": "get_account_summary complaint.text"
+          },
+          {
+            "claim": "Six consecutive months (Sep 2025 - Feb 2026) were billed on estimates at 420-445 kWh/month",
+            "source": "get_billing_history basis field for months 2025-09 through 2026-02"
+          },
+          {
+            "claim": "Actual consumption pattern is 168-180 kWh/month based on bracketing actual reads",
+            "source": "compute_consumption_stats read_deltas for Jul-Aug 2025 and Mar-Jun 2026"
+          },
+          {
+            "claim": "Across the estimate span, 2,763 kWh was billed but actual meter delta was only 1,424 kWh",
+            "source": "compute_consumption_stats estimate_run_reconciliation"
+          },
+          {
+            "claim": "Overbilling of 1,339 kWh occurred during estimate period",
+            "source": "compute_consumption_stats estimate_run_reconciliation difference_kwh"
+          },
+          {
+            "claim": "Correct tariff rate of 63 NGN/kWh was applied",
+            "source": "lookup_tariff rate_ngn_per_kwh and compute_consumption_stats months_billed_at_a_rate_other_than_record"
+          },
+          {
+            "claim": "Current arrears stand at 214,800 NGN",
+            "source": "get_account_summary outstanding_arrears_ngn"
+          }
+        ],
+        "open_questions": [],
+        "approval_role": "Revenue Assurance Manager",
+        "customer_memo": "Dear Mr. Ibrahim Sadiq, we have completed the investigation of your account. You are correct that meter reads were not taken between August 2025 and February 2026, during which time you were billed on estimates that significantly exceeded your actual consumption. Our reconciliation shows you were overbilled by 1,339 kWh (84,357 NGN). We are crediting your account with this amount. Your corrected outstanding balance is 130,443 NGN. We apologize for the inconvenience and have noted the need for regular meter reading at your premises."
+      },
+      "error": null,
+      "tools_called": [
+        "get_account_summary",
+        "get_billing_history",
+        "get_meter_reads",
+        "get_payments",
+        "get_field_notes",
+        "lookup_tariff",
+        "compute_consumption_stats"
+      ],
+      "verifier_rounds": 0,
+      "verifier_issues": [],
+      "wall_seconds": 25.21,
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 8834,
+        "output_tokens": 1252,
+        "cost_usd": 0.045282
+      },
+      "trajectory": "/Users/macbook/Downloads/meter-anomaly-triage/meter-anomaly-triage/trajectories/agent-v1-CASE-02-v1.jsonl"
+    },
+    {
+      "case_id": "CASE-03",
+      "variant": "v1",
+      "finding": {
+        "disposition": "TARIFF_BAND_MISCLASSIFICATION",
+        "recommended_action": "CREDIT_ADJUSTMENT",
+        "adjustment_ngn": 106329,
+        "adjustment_direction": "CREDIT_CUSTOMER",
+        "adjustment_working": "7935 kWh \u00d7 (68.4 - 55.0) = 7935 \u00d7 13.4 = 106,329 NGN",
+        "confidence": "HIGH",
+        "evidence": [
+          {
+            "claim": "Service band on record is C",
+            "source": "get_account_summary: service_band_on_record"
+          },
+          {
+            "claim": "Band used for billing is B",
+            "source": "get_account_summary: band_used_for_billing"
+          },
+          {
+            "claim": "All 12 months billed at 68.4 NGN/kWh instead of 55.0 NGN/kWh",
+            "source": "compute_consumption_stats: months_billed_at_a_rate_other_than_record"
+          },
+          {
+            "claim": "Feeder audit on 2026-02-18 showed 9.4 hours per day supply",
+            "source": "get_field_notes: feeder audit"
+          },
+          {
+            "claim": "Audit note states accounts on this feeder are to be billed on Band C",
+            "source": "get_field_notes: audit note"
+          },
+          {
+            "claim": "C1|B rate is 68.4 NGN/kWh",
+            "source": "lookup_tariff: C1|B"
+          },
+          {
+            "claim": "C1|C rate is 55.0 NGN/kWh",
+            "source": "lookup_tariff: C1|C"
+          },
+          {
+            "claim": "Total consumption is 7,935 kWh",
+            "source": "compute_consumption_stats: read_deltas sum"
+          },
+          {
+            "claim": "Total billed is 542,754 NGN",
+            "source": "compute_consumption_stats: total_billed_ngn"
+          }
+        ],
+        "open_questions": [],
+        "approval_role": "Revenue Assurance Manager",
+        "customer_memo": "Dear Zainab Traders, our investigation confirms your complaint regarding service band classification. A feeder audit conducted on 2026-02-18 verified that supply availability on your feeder averaged 9.4 hours per day, qualifying you for Band C tariff (55.0 NGN/kWh). However, you were incorrectly billed at Band B rates (68.4 NGN/kWh) for all 12 months from July 2025 to June 2026. We are crediting your account 106,329 NGN to correct this error. Future bills will reflect the correct Band C tariff. We apologize for this billing error and thank you for bringing it to our attention."
+      },
+      "error": null,
+      "tools_called": [
+        "get_account_summary",
+        "get_billing_history",
+        "get_meter_reads",
+        "get_payments",
+        "get_field_notes",
+        "lookup_tariff",
+        "compute_consumption_stats"
+      ],
+      "verifier_rounds": 0,
+      "verifier_issues": [],
+      "wall_seconds": 27.26,
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 10486,
+        "output_tokens": 1270,
+        "cost_usd": 0.050508
+      },
+      "trajectory": "/Users/macbook/Downloads/meter-anomaly-triage/meter-anomaly-triage/trajectories/agent-v1-CASE-03-v1.jsonl"
+    },
+    {
+      "case_id": "CASE-04",
+      "variant": "v1",
+      "finding": {
+        "disposition": "FAULTY_METER",
+        "recommended_action": "METER_REPLACEMENT",
+        "adjustment_ngn": 0,
+        "adjustment_direction": "NONE",
+        "adjustment_working": "",
+        "confidence": "HIGH",
+        "evidence": [
+          {
+            "claim": "Meter reading static at 15,330 kWh for 5 consecutive months (2025-06-30 to 2025-10-31)",
+            "source": "get_meter_reads: reads array"
+          },
+          {
+            "claim": "All read deltas show 0 kWh consumption across 4 billing periods",
+            "source": "compute_consumption_stats: read_deltas and zero_delta_periods"
+          },
+          {
+            "claim": "Bakery operating daily with two ovens and chest freezer during visit",
+            "source": "get_field_notes: note from 2025-10-31 read team"
+          },
+          {
+            "claim": "Reader escalated meter display static across four visits on 2025-11-02",
+            "source": "get_account_summary: complaint.text"
+          },
+          {
+            "claim": "Customer billed \u20a60 for 4 months when meter showed zero, then \u20a6166,143.60 via estimates for 8 months",
+            "source": "get_billing_history: rows and compute_consumption_stats: total_billed_ngn"
+          },
+          {
+            "claim": "8-month estimate run (2,429 kWh) has no bracketing actual reads for reconciliation",
+            "source": "compute_consumption_stats: estimate_run_reconciliation"
+          }
+        ],
+        "open_questions": [
+          "What is the actual consumption pattern once a functioning meter is installed?",
+          "Should the 8 months of estimates be reconciled after meter replacement?",
+          "Was there meter bypass or theft during the zero-consumption period?"
+        ],
+        "approval_role": "Technical Services Manager",
+        "customer_memo": "Our investigation confirms your meter has been faulty since at least June 2025, showing no consumption despite your business operations. We are scheduling immediate meter replacement. The estimated bills issued (Nov 2025 - Jun 2026) will be reviewed and reconciled once the new meter establishes your actual consumption pattern. A field inspection will verify the installation integrity. We apologize for the delay in addressing this equipment failure."
+      },
+      "error": null,
+      "tools_called": [
+        "get_account_summary",
+        "get_billing_history",
+        "get_meter_reads",
+        "get_payments",
+        "get_field_notes",
+        "compute_consumption_stats",
+        "lookup_tariff"
+      ],
+      "verifier_rounds": 0,
+      "verifier_issues": [],
+      "wall_seconds": 27.64,
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 8576,
+        "output_tokens": 1193,
+        "cost_usd": 0.043623
+      },
+      "trajectory": "/Users/macbook/Downloads/meter-anomaly-triage/meter-anomaly-triage/trajectories/agent-v1-CASE-04-v1.jsonl"
+    },
+    {
+      "case_id": "CASE-05",
+      "variant": "v1",
+      "finding": {
+        "disposition": "METER_BYPASS_SUSPECTED",
+        "recommended_action": "FIELD_INSPECTION",
+        "adjustment_ngn": 0,
+        "adjustment_direction": "NONE",
+        "adjustment_working": "",
+        "confidence": "HIGH",
+        "evidence": [
+          {
+            "claim": "Consumption dropped 84.5% from median 891 kWh/month (Jul-Nov 2025) to median 138 kWh/month (Dec 2025-Jun 2026)",
+            "source": "compute_consumption_stats: consumption_drop_pct, median_kwh_first_5_months, median_kwh_last_5_months"
+          },
+          {
+            "claim": "Block moulding machine and new 15HP borehole pump commissioned in December 2025, coinciding with consumption drop",
+            "source": "get_field_notes: 2026-01-20 marketing visit"
+          },
+          {
+            "claim": "Facility actively producing with 8 staff, 6 days/week operation during period of low consumption",
+            "source": "get_field_notes: 2026-01-20 visit"
+          },
+          {
+            "claim": "Service cable enters through unsealed junction box beside meter board, providing physical access for bypass",
+            "source": "get_field_notes: 2026-04-02 audit"
+          },
+          {
+            "claim": "Industrial block manufacturing facility consuming only 128-145 kWh/month is physically implausible given equipment and activity level",
+            "source": "compute_consumption_stats: read_deltas for Dec 2025-Jun 2026"
+          },
+          {
+            "claim": "Estimated revenue loss of \u20a61,185,525 over 7 months (5,269 unbilled kWh \u00d7 \u20a6225/kWh)",
+            "source": "compute_consumption_stats: read_deltas and lookup_tariff: rate_ngn_per_kwh"
+          }
+        ],
+        "open_questions": [
+          "What is the actual configuration of the service cable and junction box?",
+          "Is there evidence of tampering or unauthorized connections?",
+          "What is the current state of the meter seals?",
+          "Can the customer explain the 84.5% consumption drop despite adding heavy equipment and maintaining full production?"
+        ],
+        "approval_role": "Revenue Protection Manager",
+        "customer_memo": "Dear Gwarzo Block Industry, our records show your electricity consumption dropped by 84.5% in December 2025, the same month you commissioned new heavy equipment. A recent audit identified an unsealed junction box at your service entry point. We are scheduling a mandatory field inspection to verify your meter installation and service connection integrity. Please ensure access to all electrical equipment and service entry points. Any unauthorized connections or meter tampering will result in disconnection and prosecution per NERC regulations, plus recovery of unbilled energy estimated at \u20a61,185,525. Contact our office immediately to schedule this inspection."
+      },
+      "error": null,
+      "tools_called": [
+        "get_account_summary",
+        "get_billing_history",
+        "get_meter_reads",
+        "get_payments",
+        "get_field_notes",
+        "lookup_tariff",
+        "compute_consumption_stats"
+      ],
+      "verifier_rounds": 0,
+      "verifier_issues": [],
+      "wall_seconds": 34.22,
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 10131,
+        "output_tokens": 1566,
+        "cost_usd": 0.053883
+      },
+      "trajectory": "/Users/macbook/Downloads/meter-anomaly-triage/meter-anomaly-triage/trajectories/agent-v1-CASE-05-v1.jsonl"
+    },
+    {
+      "case_id": "CASE-06",
+      "variant": "v1",
+      "finding": {
+        "disposition": "UNBILLED_PERIOD",
+        "recommended_action": "DEBIT_ADJUSTMENT",
+        "adjustment_ngn": 40755.2,
+        "adjustment_direction": "DEBIT_CUSTOMER",
+        "adjustment_working": "796 kWh \u00d7 51.2 NGN/kWh = 40,755.20 NGN",
+        "confidence": "HIGH",
+        "evidence": [
+          {
+            "claim": "Account absent from October, November and December 2025 billing runs",
+            "source": "get_field_notes - notes field"
+          },
+          {
+            "claim": "Months with reads but no invoices: 2025-10, 2025-11, 2025-12",
+            "source": "compute_consumption_stats - months_with_a_read_but_no_invoice"
+          },
+          {
+            "claim": "October 2025 consumption: 266 kWh",
+            "source": "compute_consumption_stats - read_deltas (2025-09-30 to 2025-10-31)"
+          },
+          {
+            "claim": "November 2025 consumption: 271 kWh",
+            "source": "compute_consumption_stats - read_deltas (2025-10-31 to 2025-11-30)"
+          },
+          {
+            "claim": "December 2025 consumption: 259 kWh",
+            "source": "compute_consumption_stats - read_deltas (2025-11-30 to 2025-12-31)"
+          },
+          {
+            "claim": "Correct tariff rate of 51.2 NGN/kWh applied",
+            "source": "lookup_tariff - rate_ngn_per_kwh for R2 Band C"
+          },
+          {
+            "claim": "Current arrears shown as 0 NGN",
+            "source": "get_account_summary - outstanding_arrears_ngn"
+          },
+          {
+            "claim": "Total unbilled consumption: 796 kWh",
+            "source": "compute_consumption_stats - read_deltas sum for Oct-Dec 2025"
+          }
+        ],
+        "open_questions": [
+          "Why was this account skipped in the October-December 2025 billing runs?",
+          "Are there other accounts on the same feeder affected by the same billing system issue?"
+        ],
+        "approval_role": "Revenue Assurance Manager",
+        "customer_memo": "Dear Mr. Aminu Yusuf, an internal audit has identified that your account (SYN-1006) was inadvertently omitted from our billing system during October, November, and December 2025. Your meter was read during this period and recorded consumption of 796 kWh. We are issuing a catch-up invoice for NGN 40,755.20 to cover this unbilled consumption at the correct R2 Band C tariff rate of NGN 51.20 per kWh. We apologize for this administrative error. If you have questions, please contact our customer service team."
+      },
+      "error": null,
+      "tools_called": [
+        "get_account_summary",
+        "get_billing_history",
+        "get_meter_reads",
+        "get_payments",
+        "get_field_notes",
+        "compute_consumption_stats",
+        "lookup_tariff"
+      ],
+      "verifier_rounds": 0,
+      "verifier_issues": [],
+      "wall_seconds": 25.68,
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 8732,
+        "output_tokens": 1323,
+        "cost_usd": 0.046041
+      },
+      "trajectory": "/Users/macbook/Downloads/meter-anomaly-triage/meter-anomaly-triage/trajectories/agent-v1-CASE-06-v1.jsonl"
+    },
+    {
+      "case_id": "CASE-07",
+      "variant": "v1",
+      "finding": {
+        "disposition": "DOUBLE_BILLING",
+        "recommended_action": "CREDIT_ADJUSTMENT",
+        "adjustment_ngn": 21420.0,
+        "adjustment_direction": "CREDIT_CUSTOMER",
+        "adjustment_working": "Duplicate invoice CASE-07-INV-08B for 2026-02: 340 kWh \u00d7 63 NGN/kWh = 21,420 NGN to be reversed",
+        "confidence": "HIGH",
+        "evidence": [
+          {
+            "claim": "Two invoices issued for February 2026 with identical amounts",
+            "source": "compute_consumption_stats duplicate_invoice_months field"
+          },
+          {
+            "claim": "Both invoices CASE-07-INV-08 and CASE-07-INV-08B billed 340 kWh at 21,420 NGN",
+            "source": "get_billing_history rows for month 2026-02"
+          },
+          {
+            "claim": "Customer complained about receiving two bills for February with same amount",
+            "source": "get_account_summary complaint.text"
+          },
+          {
+            "claim": "February billing file was reprocessed after mid-run failure",
+            "source": "get_field_notes note dated 2026-03-05"
+          },
+          {
+            "claim": "Current arrears of 21,420 NGN equals one duplicate invoice",
+            "source": "get_account_summary outstanding_arrears_ngn"
+          },
+          {
+            "claim": "Customer paid 21,420 NGN on 2026-02-20 covering one February bill",
+            "source": "get_payments payment dated 2026-02-20"
+          },
+          {
+            "claim": "Actual consumption for February was 340 kWh (14,493 - 14,153)",
+            "source": "compute_consumption_stats read_deltas for period 2026-01-31 to 2026-02-28"
+          }
+        ],
+        "open_questions": [],
+        "approval_role": "Revenue Assurance Manager",
+        "customer_memo": "Dear Grace Okon, our investigation confirms that your February 2026 bill was incorrectly issued twice due to a system error during billing reprocessing. Your actual consumption was 340 kWh, correctly billed at 21,420 NGN. We have credited your account 21,420 NGN to reverse the duplicate charge. Your account balance is now cleared. We apologize for this error and any inconvenience caused."
+      },
+      "error": null,
+      "tools_called": [
+        "get_account_summary",
+        "get_billing_history",
+        "get_meter_reads",
+        "get_payments",
+        "get_field_notes",
+        "compute_consumption_stats",
+        "lookup_tariff"
+      ],
+      "verifier_rounds": 0,
+      "verifier_issues": [],
+      "wall_seconds": 26.0,
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 9431,
+        "output_tokens": 1233,
+        "cost_usd": 0.046788
+      },
+      "trajectory": "/Users/macbook/Downloads/meter-anomaly-triage/meter-anomaly-triage/trajectories/agent-v1-CASE-07-v1.jsonl"
+    },
+    {
+      "case_id": "CASE-08",
+      "variant": "v1",
+      "finding": {
+        "disposition": "NO_ANOMALY",
+        "recommended_action": "DEBIT_ADJUSTMENT",
+        "adjustment_ngn": 48537.6,
+        "adjustment_direction": "DEBIT_CUSTOMER",
+        "adjustment_working": "Total billed 144537.60 - Payment posted 48000.00 = True balance 96537.60; Current arrears shown 48000.00; Adjustment needed: 96537.60 - 48000.00 = 48537.60 debit",
+        "confidence": "HIGH",
+        "evidence": [
+          {
+            "claim": "Total billed is \u20a6144,537.60",
+            "source": "compute_consumption_stats.total_billed_ngn"
+          },
+          {
+            "claim": "Payment of \u20a648,000 was posted on 2026-04-22",
+            "source": "get_payments.payments and compute_consumption_stats.total_paid_ngn"
+          },
+          {
+            "claim": "Current arrears shown as \u20a648,000",
+            "source": "get_account_summary.outstanding_arrears_ngn"
+          },
+          {
+            "claim": "True balance should be \u20a696,537.60",
+            "source": "compute_consumption_stats arithmetic: 144537.60 - 48000.00"
+          },
+          {
+            "claim": "All billing based on actual reads with correct tariff",
+            "source": "compute_consumption_stats.actual_read_month_count and tariff_rate_on_record"
+          },
+          {
+            "claim": "Customer paid \u20a648,000 in April with bank teller",
+            "source": "get_account_summary.complaint"
+          }
+        ],
+        "open_questions": [
+          "Why is the arrears balance showing \u20a648,000 instead of the correct \u20a696,537.60?",
+          "Does the customer have documentation showing a different billing amount or promise of lower charges?"
+        ],
+        "approval_role": "Revenue Assurance Manager",
+        "customer_memo": "Dear Mr. Musa Danladi, we have reviewed your account and confirmed that your payment of \u20a648,000 made on 22-April-2026 (ref: PAY-08-BANK-4471) was successfully posted to your account. However, our records show total billing of \u20a6144,537.60 from July 2025 to June 2026 based on actual meter readings. After deducting your payment of \u20a648,000, your outstanding balance is \u20a696,537.60, not \u20a648,000 as currently displayed. We will correct the arrears figure on your account. All charges are based on actual meter readings at the approved R2 Band C tariff rate of \u20a651.20/kWh. Please contact our customer care desk if you need a detailed billing statement."
+      },
+      "error": null,
+      "tools_called": [
+        "get_account_summary",
+        "get_billing_history",
+        "get_meter_reads",
+        "get_payments",
+        "get_field_notes",
+        "lookup_tariff",
+        "compute_consumption_stats"
+      ],
+      "verifier_rounds": 0,
+      "verifier_issues": [],
+      "wall_seconds": 37.42,
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 9285,
+        "output_tokens": 1656,
+        "cost_usd": 0.052695
+      },
+      "trajectory": "/Users/macbook/Downloads/meter-anomaly-triage/meter-anomaly-triage/trajectories/agent-v1-CASE-08-v1.jsonl"
+    },
+    {
+      "case_id": "CASE-09",
+      "variant": "v1",
+      "finding": {
+        "disposition": "NO_ANOMALY",
+        "recommended_action": "NO_ACTION",
+        "adjustment_ngn": 0,
+        "adjustment_direction": "NONE",
+        "adjustment_working": "",
+        "confidence": "HIGH",
+        "evidence": [
+          {
+            "claim": "All 12 invoices based on actual meter reads, not estimates",
+            "source": "compute_consumption_stats.actual_read_month_count"
+          },
+          {
+            "claim": "Correct tariff rate of 32.5 NGN/kWh applied consistently",
+            "source": "compute_consumption_stats.months_billed_at_a_rate_other_than_record"
+          },
+          {
+            "claim": "No arithmetic errors in any invoice",
+            "source": "compute_consumption_stats.invoice_amount_arithmetic_mismatches"
+          },
+          {
+            "claim": "Consumption varies naturally between 88-124 kWh with median 96-99 kWh",
+            "source": "compute_consumption_stats.read_deltas"
+          },
+          {
+            "claim": "Customer has overpaid by 337.50 NGN, not underpaid",
+            "source": "compute_consumption_stats.total_billed_ngn and total_paid_ngn"
+          },
+          {
+            "claim": "Minimal appliances consistent with consumption level",
+            "source": "get_field_notes"
+          }
+        ],
+        "open_questions": [],
+        "approval_role": "Customer Service Supervisor",
+        "customer_memo": "Dear Fatima Aliyu, thank you for your inquiry. We have reviewed your account thoroughly. Your bills vary each month because they reflect your actual electricity consumption as recorded by your meter, which naturally fluctuates slightly from month to month (88-124 kWh). This is normal even with consistent usage, as factors like the number of days in the billing period and seasonal changes affect consumption. All your bills are based on actual meter readings, and the correct tariff rate of \u20a632.50 per kWh has been applied. In fact, your consistent monthly payments of \u20a63,400 have resulted in a small credit balance on your account. Your billing is accurate and there are no errors. If you would like to better predict your bills, your average monthly consumption is approximately 104 kWh, which costs about \u20a63,380."
+      },
+      "error": null,
+      "tools_called": [
+        "get_account_summary",
+        "get_billing_history",
+        "get_meter_reads",
+        "get_payments",
+        "get_field_notes",
+        "compute_consumption_stats",
+        "lookup_tariff"
+      ],
+      "verifier_rounds": 0,
+      "verifier_issues": [],
+      "wall_seconds": 27.72,
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 10008,
+        "output_tokens": 1161,
+        "cost_usd": 0.047439
+      },
+      "trajectory": "/Users/macbook/Downloads/meter-anomaly-triage/meter-anomaly-triage/trajectories/agent-v1-CASE-09-v1.jsonl"
+    },
+    {
+      "case_id": "CASE-10",
+      "variant": "v1",
+      "finding": {
+        "disposition": "ESTIMATION_UNDERBILLING",
+        "recommended_action": "DEBIT_ADJUSTMENT",
+        "adjustment_ngn": 61218,
+        "adjustment_direction": "DEBIT_CUSTOMER",
+        "adjustment_working": "895 kWh \u00d7 68.4 NGN/kWh = 61,218 NGN",
+        "confidence": "HIGH",
+        "evidence": [
+          {
+            "claim": "Customer is C1 tariff class, Band B",
+            "source": "get_account_summary: tariff_class, service_band_on_record"
+          },
+          {
+            "claim": "Four consecutive months estimated at 300 kWh each (Sept-Dec 2025)",
+            "source": "get_billing_history: months 2025-09 through 2025-12, basis ESTIMATE, billed_kwh 300"
+          },
+          {
+            "claim": "Field access was restricted for four months",
+            "source": "get_field_notes: 2025-12-31 note stating access restored after four months"
+          },
+          {
+            "claim": "Actual consumption from Aug 31 to Dec 31 was 2,095 kWh",
+            "source": "compute_consumption_stats: read_deltas showing 31285 to 33380 = 2095 kWh"
+          },
+          {
+            "claim": "Only 1,200 kWh was billed during the estimate period",
+            "source": "compute_consumption_stats: estimate_run_reconciliation billed_kwh 1200"
+          },
+          {
+            "claim": "Underbilling of 895 kWh during estimate period",
+            "source": "compute_consumption_stats: estimate_run_reconciliation difference_kwh -895"
+          },
+          {
+            "claim": "Correct tariff rate is 68.4 NGN/kWh",
+            "source": "lookup_tariff: C1 Band B rate_ngn_per_kwh 68.4"
+          },
+          {
+            "claim": "Normal consumption pattern is 515-534 kWh/month for this cold room",
+            "source": "compute_consumption_stats: read_deltas and get_billing_history showing consistent 515-534 kWh in non-estimated months"
+          }
+        ],
+        "open_questions": [],
+        "approval_role": "Revenue Assurance Manager",
+        "customer_memo": "Dear Sabon Gari Cold Room, our internal audit has identified that during the period September-December 2025, when field access to your meter was restricted, you were billed on estimates of 300 kWh per month. When access was restored on 31 December 2025, the actual meter reading showed consumption of 2,095 kWh across this four-month period, compared to the 1,200 kWh that was billed. This resulted in an underbilling of 895 kWh. A debit adjustment of NGN 61,218 (895 kWh \u00d7 NGN 68.4/kWh) will be applied to your account to reflect the actual consumption. This is consistent with your normal usage pattern of approximately 520 kWh per month for your cold room operations. If you have any questions, please contact our customer service team."
+      },
+      "error": null,
+      "tools_called": [
+        "get_account_summary",
+        "get_billing_history",
+        "get_meter_reads",
+        "get_payments",
+        "get_field_notes",
+        "compute_consumption_stats",
+        "lookup_tariff"
+      ],
+      "verifier_rounds": 0,
+      "verifier_issues": [],
+      "wall_seconds": 30.23,
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 9644,
+        "output_tokens": 1509,
+        "cost_usd": 0.051567
+      },
+      "trajectory": "/Users/macbook/Downloads/meter-anomaly-triage/meter-anomaly-triage/trajectories/agent-v1-CASE-10-v1.jsonl"
+    },
+    {
+      "case_id": "CASE-11",
+      "variant": "v1",
+      "finding": {
+        "disposition": "ESTIMATION_OVERBILLING",
+        "recommended_action": "CREDIT_ADJUSTMENT",
+        "adjustment_ngn": 6771600.0,
+        "adjustment_direction": "CREDIT_CUSTOMER",
+        "adjustment_working": "(99433 - 433) \u00d7 68.4 = 99000 \u00d7 68.4 = 6771600",
+        "confidence": "HIGH",
+        "evidence": [
+          {
+            "claim": "January 2026 billed 99,433 kWh for \u20a66,801,217.20",
+            "source": "get_billing_history invoice CASE-11-INV-07"
+          },
+          {
+            "claim": "Meter rolled over from 99,678 to 111 between 2025-12-31 and 2026-01-31",
+            "source": "get_meter_reads dates 2025-12-31 and 2026-01-31"
+          },
+          {
+            "claim": "Field team confirmed five-digit register rollover",
+            "source": "get_field_notes 2026-01-31"
+          },
+          {
+            "claim": "Actual consumption for January 2026 was 433 kWh after rollover correction",
+            "source": "compute_consumption_stats read_deltas and register_rollovers"
+          },
+          {
+            "claim": "Normal monthly consumption is 418-441 kWh",
+            "source": "compute_consumption_stats median_kwh values"
+          },
+          {
+            "claim": "Correct tariff rate of \u20a668.4/kWh was applied",
+            "source": "lookup_tariff C1 Band B"
+          },
+          {
+            "claim": "Customer has paid \u20a630,000 monthly consistently",
+            "source": "get_payments total 12 payments"
+          }
+        ],
+        "open_questions": [],
+        "approval_role": "Revenue Assurance Manager",
+        "customer_memo": "Dear Bello Hardware, we have completed our investigation of your January 2026 bill. Your meter register rolled over from 99,678 to 00,111 (a 5-digit meter reaching its maximum). Your actual consumption was 433 kWh, but our billing system failed to apply the rollover correction and incorrectly billed you for 99,433 kWh. We are crediting your account \u20a66,771,600.00. Your correct January bill should have been \u20a629,617.20. We apologize for this billing error."
+      },
+      "error": null,
+      "tools_called": [
+        "get_account_summary",
+        "get_billing_history",
+        "get_meter_reads",
+        "get_payments",
+        "get_field_notes",
+        "lookup_tariff",
+        "compute_consumption_stats"
+      ],
+      "verifier_rounds": 0,
+      "verifier_issues": [],
+      "wall_seconds": 30.25,
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 10096,
+        "output_tokens": 1303,
+        "cost_usd": 0.049833
+      },
+      "trajectory": "/Users/macbook/Downloads/meter-anomaly-triage/meter-anomaly-triage/trajectories/agent-v1-CASE-11-v1.jsonl"
+    },
+    {
+      "case_id": "CASE-12",
+      "variant": "v1",
+      "finding": {
+        "disposition": "NO_ANOMALY",
+        "recommended_action": "NO_ACTION",
+        "adjustment_ngn": 0,
+        "adjustment_direction": "NONE",
+        "adjustment_working": "",
+        "confidence": "HIGH",
+        "evidence": [
+          {
+            "claim": "Consumption dropped 98.8% from median 760 kWh to 9 kWh",
+            "source": "compute_consumption_stats.consumption_drop_pct, median_kwh_first_5_months, median_kwh_last_5_months"
+          },
+          {
+            "claim": "Guest house closed for renovation December 2025, generator removed",
+            "source": "get_field_notes note dated 2025-12-05"
+          },
+          {
+            "claim": "Premises confirmed empty and padlocked with meter seal intact",
+            "source": "get_field_notes note dated 2026-02-11"
+          },
+          {
+            "claim": "Only site lighting connected during renovation",
+            "source": "get_field_notes note dated 2026-05-19"
+          },
+          {
+            "claim": "All 12 invoices based on actual field reads",
+            "source": "get_billing_history.basis and compute_consumption_stats.actual_read_month_count"
+          },
+          {
+            "claim": "Tariff rate 68.4 NGN/kWh correctly applied for C1 Band B",
+            "source": "compute_consumption_stats.tariff_rate_on_record and lookup_tariff.rate_ngn_per_kwh"
+          },
+          {
+            "claim": "Read deltas match billed kWh for all months",
+            "source": "compute_consumption_stats.read_deltas and invoice_amount_arithmetic_mismatches"
+          }
+        ],
+        "open_questions": [
+          "Why does the account show 0 NGN arrears when only 8,000 NGN was paid against 269,838 NGN billed? Was there a write-off or adjustment not visible in this record?"
+        ],
+        "approval_role": "Revenue Protection Supervisor",
+        "customer_memo": "Your account has been reviewed following a revenue protection referral. The investigation confirms that the significant drop in electricity consumption from December 2025 onwards was legitimate and properly documented by field staff who verified your guest house was closed for renovation. All billing was accurate and based on actual meter readings at the correct tariff rate. The minimal consumption recorded (8-12 kWh monthly) is consistent with site lighting during renovation work. No billing anomaly was found. Your account status remains unchanged."
+      },
+      "error": null,
+      "tools_called": [
+        "get_account_summary",
+        "get_billing_history",
+        "get_meter_reads",
+        "get_payments",
+        "get_field_notes",
+        "compute_consumption_stats",
+        "lookup_tariff"
+      ],
+      "verifier_rounds": 0,
+      "verifier_issues": [],
+      "wall_seconds": 24.49,
+      "usage": {
+        "llm_calls": 3,
+        "input_tokens": 9374,
+        "output_tokens": 1151,
+        "cost_usd": 0.045387
+      },
+      "trajectory": "/Users/macbook/Downloads/meter-anomaly-triage/meter-anomaly-triage/trajectories/agent-v1-CASE-12-v1.jsonl"
+    }
+  ]
+}

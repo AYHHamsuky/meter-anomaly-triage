@@ -1,0 +1,157 @@
+{
+  "account": {
+    "account_no": "SYN-1004",
+    "band_used_for_billing": "B",
+    "connection_date": "2019-03-11",
+    "customer_name": "Rahma Bakery",
+    "feeder": "Synthetic Feeder 11kV",
+    "meter_type": "POSTPAID_METERED",
+    "outstanding_arrears_ngn": 0.0,
+    "service_band_on_record": "B",
+    "tariff_class": "C1"
+  },
+  "billing_history": [
+    {
+      "amount_ngn": 0.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 0,
+      "invoice_no": "CASE-04-INV-01",
+      "month": "2025-07",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 0.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 0,
+      "invoice_no": "CASE-04-INV-02",
+      "month": "2025-08",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 0.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 0,
+      "invoice_no": "CASE-04-INV-03",
+      "month": "2025-09",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 0.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 0,
+      "invoice_no": "CASE-04-INV-04",
+      "month": "2025-10",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 21204.0,
+      "basis": "ESTIMATE",
+      "billed_kwh": 310,
+      "invoice_no": "CASE-04-INV-05",
+      "month": "2025-11",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 20862.0,
+      "basis": "ESTIMATE",
+      "billed_kwh": 305,
+      "invoice_no": "CASE-04-INV-06",
+      "month": "2025-12",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 20383.2,
+      "basis": "ESTIMATE",
+      "billed_kwh": 298,
+      "invoice_no": "CASE-04-INV-07",
+      "month": "2026-01",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 21340.8,
+      "basis": "ESTIMATE",
+      "billed_kwh": 312,
+      "invoice_no": "CASE-04-INV-08",
+      "month": "2026-02",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 20520.0,
+      "basis": "ESTIMATE",
+      "billed_kwh": 300,
+      "invoice_no": "CASE-04-INV-09",
+      "month": "2026-03",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 20178.0,
+      "basis": "ESTIMATE",
+      "billed_kwh": 295,
+      "invoice_no": "CASE-04-INV-10",
+      "month": "2026-04",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 21067.2,
+      "basis": "ESTIMATE",
+      "billed_kwh": 308,
+      "invoice_no": "CASE-04-INV-11",
+      "month": "2026-05",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 20588.4,
+      "basis": "ESTIMATE",
+      "billed_kwh": 301,
+      "invoice_no": "CASE-04-INV-12",
+      "month": "2026-06",
+      "rate_applied_ngn_per_kwh": 68.4
+    }
+  ],
+  "case_id": "CASE-04",
+  "complaint": {
+    "channel": "Field report",
+    "date": "2025-11-02",
+    "text": "Reader escalated: meter display static across four visits although the premises is busy."
+  },
+  "field_notes": [
+    "2025-10-31 read team: reading unchanged at 15330 for the fourth consecutive month.",
+    "2025-10-31 read team: bakery operating daily, two ovens and a chest freezer running during visit."
+  ],
+  "meter_reads": [
+    {
+      "date": "2025-06-30",
+      "reading": 15330.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-07-31",
+      "reading": 15330.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-08-31",
+      "reading": 15330.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-09-30",
+      "reading": 15330.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-10-31",
+      "reading": 15330.0,
+      "source": "FIELD"
+    }
+  ],
+  "opened_on": "2026-07-06",
+  "payments": [
+    {
+      "amount_ngn": 20000.0,
+      "date": "2026-01-16",
+      "reference": "PAY-04-1"
+    }
+  ],
+  "tariff_reference": "SYNTHETIC-TARIFF-2026"
+}

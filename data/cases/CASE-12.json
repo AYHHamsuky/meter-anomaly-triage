@@ -1,0 +1,199 @@
+{
+  "account": {
+    "account_no": "SYN-1012",
+    "band_used_for_billing": "B",
+    "connection_date": "2019-03-11",
+    "customer_name": "Tudun Wada Guest House",
+    "feeder": "Synthetic Feeder 11kV",
+    "meter_type": "POSTPAID_METERED",
+    "outstanding_arrears_ngn": 0.0,
+    "service_band_on_record": "B",
+    "tariff_class": "C1"
+  },
+  "billing_history": [
+    {
+      "amount_ngn": 51984.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 760,
+      "invoice_no": "CASE-12-INV-01",
+      "month": "2025-07",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 50752.8,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 742,
+      "invoice_no": "CASE-12-INV-02",
+      "month": "2025-08",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 52736.4,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 771,
+      "invoice_no": "CASE-12-INV-03",
+      "month": "2025-09",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 51642.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 755,
+      "invoice_no": "CASE-12-INV-04",
+      "month": "2025-10",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 52531.2,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 768,
+      "invoice_no": "CASE-12-INV-05",
+      "month": "2025-11",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 6156.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 90,
+      "invoice_no": "CASE-12-INV-06",
+      "month": "2025-12",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 820.8,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 12,
+      "invoice_no": "CASE-12-INV-07",
+      "month": "2026-01",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 615.6,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 9,
+      "invoice_no": "CASE-12-INV-08",
+      "month": "2026-02",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 752.4,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 11,
+      "invoice_no": "CASE-12-INV-09",
+      "month": "2026-03",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 547.2,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 8,
+      "invoice_no": "CASE-12-INV-10",
+      "month": "2026-04",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 684.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 10,
+      "invoice_no": "CASE-12-INV-11",
+      "month": "2026-05",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 615.6,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 9,
+      "invoice_no": "CASE-12-INV-12",
+      "month": "2026-06",
+      "rate_applied_ngn_per_kwh": 68.4
+    }
+  ],
+  "case_id": "CASE-12",
+  "complaint": {
+    "channel": "Revenue protection referral",
+    "date": "2026-06-01",
+    "text": "Flagged by the consumption drop rule for suspected energy theft."
+  },
+  "field_notes": [
+    "2025-12-05 marketing visit: guest house closed for renovation, generator set removed from the yard.",
+    "2026-02-11 read team: premises padlocked, security man on site confirms building empty since December 2025.",
+    "2026-02-11 read team: meter seal intact, seal number matches the installation record.",
+    "2026-05-19 read team: renovation ongoing, only site lighting connected."
+  ],
+  "meter_reads": [
+    {
+      "date": "2025-06-30",
+      "reading": 52800.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-07-31",
+      "reading": 53560.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-08-31",
+      "reading": 54302.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-09-30",
+      "reading": 55073.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-10-31",
+      "reading": 55828.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-11-30",
+      "reading": 56596.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-12-31",
+      "reading": 56686.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-01-31",
+      "reading": 56698.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-02-28",
+      "reading": 56707.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-03-31",
+      "reading": 56718.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-04-30",
+      "reading": 56726.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-05-31",
+      "reading": 56736.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-06-30",
+      "reading": 56745.0,
+      "source": "FIELD"
+    }
+  ],
+  "opened_on": "2026-07-06",
+  "payments": [
+    {
+      "amount_ngn": 8000.0,
+      "date": "2026-03-14",
+      "reference": "PAY-12-1"
+    }
+  ],
+  "tariff_reference": "SYNTHETIC-TARIFF-2026"
+}

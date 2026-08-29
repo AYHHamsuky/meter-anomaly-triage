@@ -1,0 +1,252 @@
+{
+  "account": {
+    "account_no": "SYN-1003",
+    "band_used_for_billing": "B",
+    "connection_date": "2019-03-11",
+    "customer_name": "Zainab Traders",
+    "feeder": "Synthetic Feeder 33kV",
+    "meter_type": "POSTPAID_METERED",
+    "outstanding_arrears_ngn": 0.0,
+    "service_band_on_record": "C",
+    "tariff_class": "C1"
+  },
+  "billing_history": [
+    {
+      "amount_ngn": 43776.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 640,
+      "invoice_no": "CASE-03-INV-01",
+      "month": "2025-07",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 44802.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 655,
+      "invoice_no": "CASE-03-INV-02",
+      "month": "2025-08",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 41724.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 610,
+      "invoice_no": "CASE-03-INV-03",
+      "month": "2025-09",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 45691.2,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 668,
+      "invoice_no": "CASE-03-INV-04",
+      "month": "2025-10",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 48016.8,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 702,
+      "invoice_no": "CASE-03-INV-05",
+      "month": "2025-11",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 47196.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 690,
+      "invoice_no": "CASE-03-INV-06",
+      "month": "2025-12",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 48906.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 715,
+      "invoice_no": "CASE-03-INV-07",
+      "month": "2026-01",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 47059.2,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 688,
+      "invoice_no": "CASE-03-INV-08",
+      "month": "2026-02",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 43776.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 640,
+      "invoice_no": "CASE-03-INV-09",
+      "month": "2026-03",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 44596.8,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 652,
+      "invoice_no": "CASE-03-INV-10",
+      "month": "2026-04",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 43092.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 630,
+      "invoice_no": "CASE-03-INV-11",
+      "month": "2026-05",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 44118.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 645,
+      "invoice_no": "CASE-03-INV-12",
+      "month": "2026-06",
+      "rate_applied_ngn_per_kwh": 68.4
+    }
+  ],
+  "case_id": "CASE-03",
+  "complaint": {
+    "channel": "Email",
+    "date": "2026-05-04",
+    "text": "We are told we are a Band B customer but we hardly get light for ten hours a day."
+  },
+  "field_notes": [
+    "2026-02-18 feeder audit: supply availability on this feeder averaged 9.4 hours per day over the quarter.",
+    "2026-02-18 audit note: accounts on this feeder are to be billed on Band C."
+  ],
+  "meter_reads": [
+    {
+      "date": "2025-06-30",
+      "reading": 21400.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-07-31",
+      "reading": 22040.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-08-31",
+      "reading": 22695.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-09-30",
+      "reading": 23305.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-10-31",
+      "reading": 23973.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-11-30",
+      "reading": 24675.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-12-31",
+      "reading": 25365.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-01-31",
+      "reading": 26080.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-02-28",
+      "reading": 26768.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-03-31",
+      "reading": 27408.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-04-30",
+      "reading": 28060.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-05-31",
+      "reading": 28690.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-06-30",
+      "reading": 29335.0,
+      "source": "FIELD"
+    }
+  ],
+  "opened_on": "2026-07-06",
+  "payments": [
+    {
+      "amount_ngn": 44000.0,
+      "date": "2025-07-20",
+      "reference": "PAY-03-0"
+    },
+    {
+      "amount_ngn": 44000.0,
+      "date": "2025-08-20",
+      "reference": "PAY-03-1"
+    },
+    {
+      "amount_ngn": 44000.0,
+      "date": "2025-09-20",
+      "reference": "PAY-03-2"
+    },
+    {
+      "amount_ngn": 44000.0,
+      "date": "2025-10-20",
+      "reference": "PAY-03-3"
+    },
+    {
+      "amount_ngn": 44000.0,
+      "date": "2025-11-20",
+      "reference": "PAY-03-4"
+    },
+    {
+      "amount_ngn": 44000.0,
+      "date": "2025-12-20",
+      "reference": "PAY-03-5"
+    },
+    {
+      "amount_ngn": 44000.0,
+      "date": "2026-01-20",
+      "reference": "PAY-03-6"
+    },
+    {
+      "amount_ngn": 44000.0,
+      "date": "2026-02-20",
+      "reference": "PAY-03-7"
+    },
+    {
+      "amount_ngn": 44000.0,
+      "date": "2026-03-20",
+      "reference": "PAY-03-8"
+    },
+    {
+      "amount_ngn": 44000.0,
+      "date": "2026-04-20",
+      "reference": "PAY-03-9"
+    },
+    {
+      "amount_ngn": 44000.0,
+      "date": "2026-05-20",
+      "reference": "PAY-03-10"
+    },
+    {
+      "amount_ngn": 44000.0,
+      "date": "2026-06-20",
+      "reference": "PAY-03-11"
+    }
+  ],
+  "tariff_reference": "SYNTHETIC-TARIFF-2026"
+}

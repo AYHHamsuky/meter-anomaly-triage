@@ -1,0 +1,132 @@
+{
+  "CASE-01": {
+    "action": "NO_ACTION",
+    "adjustment_ngn": 0,
+    "disposition": "NO_ANOMALY",
+    "rationale": "Every month is on an actual read, read deltas match billed kWh, and the rate applied matches the R2/C tariff. The increase tracks the two AC units installed in January.",
+    "required_tools": [
+      "get_billing_history",
+      "get_meter_reads",
+      "compute_consumption_stats"
+    ]
+  },
+  "CASE-02": {
+    "action": "CREDIT_ADJUSTMENT",
+    "adjustment_ngn": 84357.0,
+    "disposition": "ESTIMATION_OVERBILLING",
+    "rationale": "Six consecutive estimated months (Sep 2025 to Feb 2026) billed 2595 kWh, but the actual reads either side of the estimate run (9246 to 10502) show only 1256 kWh was consumed. The 1339 kWh difference must be credited at the R2/B rate of 63.00.",
+    "required_tools": [
+      "get_billing_history",
+      "get_meter_reads",
+      "compute_consumption_stats"
+    ]
+  },
+  "CASE-03": {
+    "action": "CREDIT_ADJUSTMENT",
+    "adjustment_ngn": 106329.0,
+    "disposition": "TARIFF_BAND_MISCLASSIFICATION",
+    "rationale": "The account is on record as C1/Band C and the feeder audit confirms 9.4 hours daily supply, but all twelve months were billed at the Band B rate of 68.40 instead of 55.00. The 13.40 per kWh overcharge across 7935 kWh must be credited.",
+    "required_tools": [
+      "get_billing_history",
+      "lookup_tariff",
+      "get_field_notes"
+    ]
+  },
+  "CASE-04": {
+    "action": "METER_REPLACEMENT",
+    "adjustment_ngn": 0,
+    "disposition": "FAULTY_METER",
+    "rationale": "The register held at 15330 across four consecutive field reads while the field team recorded ovens and a freezer running. The meter has stalled and must be replaced; the estimated months stand until a healthy meter establishes a real baseline.",
+    "required_tools": [
+      "get_meter_reads",
+      "get_field_notes",
+      "compute_consumption_stats"
+    ]
+  },
+  "CASE-05": {
+    "action": "FIELD_INSPECTION",
+    "adjustment_ngn": 0,
+    "disposition": "METER_BYPASS_SUSPECTED",
+    "rationale": "Recorded consumption fell about 85 percent from December 2025 while the field record shows new load commissioned in the same month and an unsealed junction box beside the meter board. This warrants a joint inspection; no adjustment may be raised before the inspection report.",
+    "required_tools": [
+      "get_billing_history",
+      "compute_consumption_stats",
+      "get_field_notes"
+    ]
+  },
+  "CASE-06": {
+    "action": "DEBIT_ADJUSTMENT",
+    "adjustment_ngn": 40755.2,
+    "disposition": "UNBILLED_PERIOD",
+    "rationale": "Reads exist for October to December 2025 but no invoice was raised. The 786 kWh recorded in those months is billable at the R2/C rate. Because the omission is the utility's, the debit should be raised transparently and offered on an instalment plan.",
+    "required_tools": [
+      "get_billing_history",
+      "get_meter_reads",
+      "compute_consumption_stats"
+    ]
+  },
+  "CASE-07": {
+    "action": "CREDIT_ADJUSTMENT",
+    "adjustment_ngn": 21420.0,
+    "disposition": "DOUBLE_BILLING",
+    "rationale": "Two invoices exist for February 2026 for the same 340 kWh, and the billing run note records a reprocessed February file. The duplicate invoice must be reversed.",
+    "required_tools": [
+      "get_billing_history"
+    ]
+  },
+  "CASE-08": {
+    "action": "POST_PAYMENT",
+    "adjustment_ngn": 48000.0,
+    "disposition": "PAYMENT_NOT_POSTED",
+    "rationale": "A payment of 48,000 dated 22 April 2026 sits in the payment register while arrears still show 48,000 outstanding. The payment must be posted and the disconnection order withdrawn.",
+    "required_tools": [
+      "get_payments",
+      "get_billing_history"
+    ]
+  },
+  "CASE-09": {
+    "action": "NO_ACTION",
+    "adjustment_ngn": 0,
+    "disposition": "NO_ANOMALY",
+    "rationale": "All months are on actual reads, deltas reconcile with billed kWh and the rate is correct for R1/C. Month to month variation is normal seasonal movement on a small load.",
+    "required_tools": [
+      "get_billing_history",
+      "get_meter_reads",
+      "compute_consumption_stats"
+    ]
+  },
+  "CASE-10": {
+    "action": "DEBIT_ADJUSTMENT",
+    "adjustment_ngn": 61218.0,
+    "disposition": "ESTIMATION_UNDERBILLING",
+    "rationale": "The four estimated months billed 1200 kWh while the reads either side (31285 to 33380) show 2095 kWh consumed. The 895 kWh shortfall is recoverable, and the customer should be told how the figure was derived and offered instalments.",
+    "required_tools": [
+      "get_billing_history",
+      "get_meter_reads",
+      "compute_consumption_stats"
+    ]
+  },
+  "CASE-11": {
+    "action": "CREDIT_ADJUSTMENT",
+    "adjustment_ngn": 6771600.0,
+    "disposition": "FAULTY_METER",
+    "rationale": "The five digit register rolled over from 99678 to 00111, so January 2026 consumption is 433 kWh, not 99433 kWh. The billing engine treated the rollover as a negative delta and issued a 6,801,217.20 naira invoice that must be reversed and reissued at 433 kWh.",
+    "required_tools": [
+      "get_meter_reads",
+      "get_billing_history",
+      "compute_consumption_stats"
+    ]
+  },
+  "CASE-12": {
+    "action": "NO_ACTION",
+    "adjustment_ngn": 0,
+    "challenge_note": "This is the deliberate hard case. It matches the bypass pattern on the numbers alone and is only resolved by reading the field notes, so it separates agents that look at evidence from agents that pattern match on a consumption drop.",
+    "disposition": "NO_ANOMALY",
+    "rationale": "Consumption collapsed in December 2025, but three independent field visits record the premises closed for renovation with the meter seal intact and matching the installation record. The drop is explained by vacancy, so no theft case should be raised.",
+    "required_tools": [
+      "get_billing_history",
+      "compute_consumption_stats",
+      "get_field_notes"
+    ]
+  }
+}

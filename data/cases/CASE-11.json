@@ -1,0 +1,251 @@
+{
+  "account": {
+    "account_no": "SYN-1011",
+    "band_used_for_billing": "B",
+    "connection_date": "2019-03-11",
+    "customer_name": "Bello Hardware",
+    "feeder": "Synthetic Feeder 11kV",
+    "meter_type": "POSTPAID_METERED",
+    "outstanding_arrears_ngn": 6801217.2,
+    "service_band_on_record": "B",
+    "tariff_class": "C1"
+  },
+  "billing_history": [
+    {
+      "amount_ngn": 29412.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 430,
+      "invoice_no": "CASE-11-INV-01",
+      "month": "2025-07",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 29070.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 425,
+      "invoice_no": "CASE-11-INV-02",
+      "month": "2025-08",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 28591.2,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 418,
+      "invoice_no": "CASE-11-INV-03",
+      "month": "2025-09",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 30164.4,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 441,
+      "invoice_no": "CASE-11-INV-04",
+      "month": "2025-10",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 29822.4,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 436,
+      "invoice_no": "CASE-11-INV-05",
+      "month": "2025-11",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 29275.2,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 428,
+      "invoice_no": "CASE-11-INV-06",
+      "month": "2025-12",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 6801217.2,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 99433,
+      "invoice_no": "CASE-11-INV-07",
+      "month": "2026-01",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 28386.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 415,
+      "invoice_no": "CASE-11-INV-08",
+      "month": "2026-02",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 28864.8,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 422,
+      "invoice_no": "CASE-11-INV-09",
+      "month": "2026-03",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 29412.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 430,
+      "invoice_no": "CASE-11-INV-10",
+      "month": "2026-04",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 28659.6,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 419,
+      "invoice_no": "CASE-11-INV-11",
+      "month": "2026-05",
+      "rate_applied_ngn_per_kwh": 68.4
+    },
+    {
+      "amount_ngn": 29206.8,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 427,
+      "invoice_no": "CASE-11-INV-12",
+      "month": "2026-06",
+      "rate_applied_ngn_per_kwh": 68.4
+    }
+  ],
+  "case_id": "CASE-11",
+  "complaint": {
+    "channel": "Customer care desk",
+    "date": "2026-02-03",
+    "text": "They have billed me almost seven million naira for one month. My shop cannot use that light in ten years."
+  },
+  "field_notes": [
+    "2026-01-31 read team: five digit register, previous reading 99678, current reading 00111."
+  ],
+  "meter_reads": [
+    {
+      "date": "2025-06-30",
+      "reading": 97100.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-07-31",
+      "reading": 97530.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-08-31",
+      "reading": 97955.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-09-30",
+      "reading": 98373.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-10-31",
+      "reading": 98814.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-11-30",
+      "reading": 99250.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-12-31",
+      "reading": 99678.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-01-31",
+      "reading": 111.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-02-28",
+      "reading": 526.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-03-31",
+      "reading": 948.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-04-30",
+      "reading": 1378.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-05-31",
+      "reading": 1797.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-06-30",
+      "reading": 2224.0,
+      "source": "FIELD"
+    }
+  ],
+  "opened_on": "2026-07-06",
+  "payments": [
+    {
+      "amount_ngn": 30000.0,
+      "date": "2025-07-18",
+      "reference": "PAY-11-0"
+    },
+    {
+      "amount_ngn": 30000.0,
+      "date": "2025-08-18",
+      "reference": "PAY-11-1"
+    },
+    {
+      "amount_ngn": 30000.0,
+      "date": "2025-09-18",
+      "reference": "PAY-11-2"
+    },
+    {
+      "amount_ngn": 30000.0,
+      "date": "2025-10-18",
+      "reference": "PAY-11-3"
+    },
+    {
+      "amount_ngn": 30000.0,
+      "date": "2025-11-18",
+      "reference": "PAY-11-4"
+    },
+    {
+      "amount_ngn": 30000.0,
+      "date": "2025-12-18",
+      "reference": "PAY-11-5"
+    },
+    {
+      "amount_ngn": 30000.0,
+      "date": "2026-01-18",
+      "reference": "PAY-11-6"
+    },
+    {
+      "amount_ngn": 30000.0,
+      "date": "2026-02-18",
+      "reference": "PAY-11-7"
+    },
+    {
+      "amount_ngn": 30000.0,
+      "date": "2026-03-18",
+      "reference": "PAY-11-8"
+    },
+    {
+      "amount_ngn": 30000.0,
+      "date": "2026-04-18",
+      "reference": "PAY-11-9"
+    },
+    {
+      "amount_ngn": 30000.0,
+      "date": "2026-05-18",
+      "reference": "PAY-11-10"
+    },
+    {
+      "amount_ngn": 30000.0,
+      "date": "2026-06-18",
+      "reference": "PAY-11-11"
+    }
+  ],
+  "tariff_reference": "SYNTHETIC-TARIFF-2026"
+}

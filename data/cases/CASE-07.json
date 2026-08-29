@@ -1,0 +1,204 @@
+{
+  "account": {
+    "account_no": "SYN-1007",
+    "band_used_for_billing": "B",
+    "connection_date": "2019-03-11",
+    "customer_name": "Grace Okon",
+    "feeder": "Synthetic Feeder 11kV",
+    "meter_type": "POSTPAID_METERED",
+    "outstanding_arrears_ngn": 21420.0,
+    "service_band_on_record": "B",
+    "tariff_class": "R2"
+  },
+  "billing_history": [
+    {
+      "amount_ngn": 20034.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 318,
+      "invoice_no": "CASE-07-INV-01",
+      "month": "2025-07",
+      "rate_applied_ngn_per_kwh": 63.0
+    },
+    {
+      "amount_ngn": 20286.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 322,
+      "invoice_no": "CASE-07-INV-02",
+      "month": "2025-08",
+      "rate_applied_ngn_per_kwh": 63.0
+    },
+    {
+      "amount_ngn": 19215.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 305,
+      "invoice_no": "CASE-07-INV-03",
+      "month": "2025-09",
+      "rate_applied_ngn_per_kwh": 63.0
+    },
+    {
+      "amount_ngn": 20790.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 330,
+      "invoice_no": "CASE-07-INV-04",
+      "month": "2025-10",
+      "rate_applied_ngn_per_kwh": 63.0
+    },
+    {
+      "amount_ngn": 21672.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 344,
+      "invoice_no": "CASE-07-INV-05",
+      "month": "2025-11",
+      "rate_applied_ngn_per_kwh": 63.0
+    },
+    {
+      "amount_ngn": 21168.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 336,
+      "invoice_no": "CASE-07-INV-06",
+      "month": "2025-12",
+      "rate_applied_ngn_per_kwh": 63.0
+    },
+    {
+      "amount_ngn": 20664.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 328,
+      "invoice_no": "CASE-07-INV-07",
+      "month": "2026-01",
+      "rate_applied_ngn_per_kwh": 63.0
+    },
+    {
+      "amount_ngn": 21420.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 340,
+      "invoice_no": "CASE-07-INV-08",
+      "month": "2026-02",
+      "rate_applied_ngn_per_kwh": 63.0
+    },
+    {
+      "amount_ngn": 19908.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 316,
+      "invoice_no": "CASE-07-INV-09",
+      "month": "2026-03",
+      "rate_applied_ngn_per_kwh": 63.0
+    },
+    {
+      "amount_ngn": 20475.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 325,
+      "invoice_no": "CASE-07-INV-10",
+      "month": "2026-04",
+      "rate_applied_ngn_per_kwh": 63.0
+    },
+    {
+      "amount_ngn": 20097.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 319,
+      "invoice_no": "CASE-07-INV-11",
+      "month": "2026-05",
+      "rate_applied_ngn_per_kwh": 63.0
+    },
+    {
+      "amount_ngn": 20853.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 331,
+      "invoice_no": "CASE-07-INV-12",
+      "month": "2026-06",
+      "rate_applied_ngn_per_kwh": 63.0
+    },
+    {
+      "amount_ngn": 21420.0,
+      "basis": "ACTUAL_READ",
+      "billed_kwh": 340,
+      "invoice_no": "CASE-07-INV-08B",
+      "month": "2026-02",
+      "rate_applied_ngn_per_kwh": 63.0
+    }
+  ],
+  "case_id": "CASE-07",
+  "complaint": {
+    "channel": "WhatsApp",
+    "date": "2026-03-07",
+    "text": "I received two bills for February with the same amount and my arrears went up."
+  },
+  "field_notes": [
+    "2026-03-05 billing run note: February file reprocessed after a mid-run failure."
+  ],
+  "meter_reads": [
+    {
+      "date": "2025-06-30",
+      "reading": 11870.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-07-31",
+      "reading": 12188.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-08-31",
+      "reading": 12510.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-09-30",
+      "reading": 12815.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-10-31",
+      "reading": 13145.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-11-30",
+      "reading": 13489.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2025-12-31",
+      "reading": 13825.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-01-31",
+      "reading": 14153.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-02-28",
+      "reading": 14493.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-03-31",
+      "reading": 14809.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-04-30",
+      "reading": 15134.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-05-31",
+      "reading": 15453.0,
+      "source": "FIELD"
+    },
+    {
+      "date": "2026-06-30",
+      "reading": 15784.0,
+      "source": "FIELD"
+    }
+  ],
+  "opened_on": "2026-07-06",
+  "payments": [
+    {
+      "amount_ngn": 21420.0,
+      "date": "2026-02-20",
+      "reference": "PAY-07-1"
+    }
+  ],
+  "tariff_reference": "SYNTHETIC-TARIFF-2026"
+}

@@ -1,0 +1,7 @@
+{
+  "_note": "Timings you measured yourself. Leave a value null until you have actually timed it. The eval reports whatever is here and never invents a number.",
+  "manual_triage_minutes_per_case": null,
+  "review_baseline_output_minutes_per_case": null,
+  "review_agent_output_minutes_per_case": null,
+  "method": "Describe how you timed it: who, how many cases, stopwatch or log timestamps."
+}
