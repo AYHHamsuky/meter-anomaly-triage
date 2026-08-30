@@ -69,6 +69,7 @@ def complete(messages, system, tools=None, max_tokens=2000, temperature=0,
             "ANTHROPIC_API_KEY is not set. Export it, or run with "
             "TRIAGE_PROVIDER=mock for an offline smoke test."
         )
+    workspace_id = os.environ.get("ANTHROPIC_WORKSPACE_ID")
 
     body = {
         "model": model,
@@ -80,16 +81,20 @@ def complete(messages, system, tools=None, max_tokens=2000, temperature=0,
     if tools:
         body["tools"] = tools
 
+    headers = {
+        "x-api-key": key,
+        "anthropic-version": ANTHROPIC_VERSION,
+        "content-type": "application/json",
+    }
+    if workspace_id:
+        headers["anthropic-workspace-id"] = workspace_id
+
     last = None
     for attempt in range(retries):
         try:
             resp = requests.post(
                 API_URL,
-                headers={
-                    "x-api-key": key,
-                    "anthropic-version": ANTHROPIC_VERSION,
-                    "content-type": "application/json",
-                },
+                headers=headers,
                 data=json.dumps(body),
                 timeout=180,
             )

@@ -121,6 +121,11 @@ trajectory. It calls exactly the same functions as the CLI.
 - `ANTHROPIC_API_KEY is not set` — export it, or run with `TRIAGE_PROVIDER=mock`.
 - `Anthropic API error 404` — the model string is not available to your key. Change
   `TRIAGE_MODEL`.
+- `Anthropic API error 400: anthropic-workspace-id is required when authenticating with an
+  identity-linked API key` — some keys (identity-linked / SSO-issued) require the request to
+  name the workspace it acts in. Set `ANTHROPIC_WORKSPACE_ID` in `.env` to that workspace's id
+  (found on console.anthropic.com under the workspace's settings); `src/llm.py` sends it as the
+  `anthropic-workspace-id` header only when the variable is set, so a standard key is unaffected.
 - `Anthropic API error 400: temperature is deprecated for this model` — some model snapshots
   (observed on `claude-sonnet-5`) accept only `temperature=1` or an omitted `temperature` field,
   rejecting the pinned `temperature=0`. This is a per-snapshot API restriction, not a bug in

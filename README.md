@@ -129,29 +129,35 @@ correct, no false theft accusation on CASE-12, and every naira figure traceable 
 result.** A system that scores well on accuracy but invents a figure has failed.
 
 ```
-METRIC                    SIMPLE BASELINE    AGENT SOLUTION    CHANGE
-Disposition accuracy      1.000 (12/12)      0.917 (11/12)     -0.083  (see note below)
-Adjustment within 2%      0.583 (7/12)       0.917 (11/12)     +0.334
-Evidence coverage         0.00 (no tools)    1.00               +1.00
-Human time per case       not yet measured   not yet measured   config/time_study.json is null
-Wall time per case (s)    12.29               132.63            +120.3
-Cost per case (USD)       0.0164              0.1106            +0.094 (~6.8x)
+METRIC                    SIMPLE BASELINE           AGENT SOLUTION (v4)
+                          run1     run2    avg       run1     run2    avg      CHANGE (avg)
+Disposition accuracy      1.000    1.000   1.000     0.917    0.750   0.833    -0.167
+Adjustment within 2%      0.583    0.667   0.625     0.917    0.833   0.875    +0.250
+Evidence coverage         0.00     0.00    0.00      1.00     1.00    1.00     +1.00
+Memo usable rate          0.75     0.75    0.75      1.00     0.833   0.917    +0.167
+Human time per case       not yet measured                    not yet measured  config/time_study.json is null
+Wall time per case (s)    12.29    12.98   12.6      132.63   58.36   95.5     +82.8
+Cost per case (USD)       0.0164   0.0166  0.0165    0.1106   0.1055  0.108    +0.091 (~6.5x)
 ```
 
-Real run, `claude-sonnet-4-5-20250929`, temperature 0, 12 cases (`results/baseline.json`,
-`results/v4.json`, 2026-08-29). `claude-sonnet-5` itself rejects `temperature=0` on this key
-("deprecated for this model") so the model string differs from the default in `.env.example`;
-it is recorded in every result and trajectory file.
+Two independent real runs, `claude-sonnet-4-5-20250929`, temperature 0, 12 cases each
+(`results/run1/`, `results/run2/`, 2026-08-29 and 2026-08-30, two different API keys —
+`claude-sonnet-5` itself rejects `temperature=0` on both, so the model string differs from
+`.env.example`'s default; it is recorded in every result and trajectory file).
 
-**On disposition accuracy the baseline beat v4 in this run — 12/12 against 11/12.** That is the
-opposite of the headline the architecture implies, and it is real, not a typo. See the
-Improvement changelog and the hot take below for what actually happened and why it is not a
-reason to prefer the baseline. REPRODUCE.md's own advice applies: "expect the accuracy figures
-to move by a case or so between runs; run each arm twice if a difference looks marginal." One
-case, on 12, is exactly that — this table is one run, not a settled result.
+**On disposition accuracy the baseline beat v4 in both runs, and the gap widened on the
+second run (12/12 vs 11/12, then 12/12 vs 9/12).** This is not noise. Rerunning was meant to
+find out if it was, per REPRODUCE.md's own advice to rerun when a difference looks marginal —
+it wasn't. **The same case, CASE-05, failed the same way in both runs**, with the verifier
+producing nearly word-for-word the same wrong objection each time
+(`trajectories/agent-v4-CASE-05-v4.jsonl` vs `trajectories/agent-v4-CASE-05-v4-run2.jsonl`).
+That is a systematic failure mode in the verifier's reasoning, not a fluke of temperature. See
+the changelog and hot take below for what it is and why v4 is still the submitted
+architecture despite it.
 
 `config/time_study.json` is where the human timings go, and it stays null until somebody has
-actually held a stopwatch against a real triage. Nobody has yet for this submission.
+actually held a stopwatch against a real triage. Timing is in progress for this submission —
+see `config/time_study.json` for whatever has been measured by the time you read this.
 
 ## Improvement changelog
 
@@ -163,43 +169,50 @@ Each row is a variant you can rerun on its own: `python -m evals.run_eval --arm 
 | **v1 tool loop** | Put the record behind seven tools, including one (`compute_consumption_stats`) that does the reconciliation arithmetic, after seeing the baseline invent figures with no traceable source. | `results/v1.json` | Adjustment accuracy jumped to 1.0 and evidence coverage to 1.0 — every number now traces to a tool call. But disposition accuracy *dropped* to 0.833 (10/12): missed CASE-08 (`PAYMENT_NOT_POSTED` → called `NO_ANOMALY`) and CASE-11 (`FAULTY_METER` → called `ESTIMATION_OVERBILLING`). Tools alone give the model correct numbers; they don't tell it what the company does about those numbers. |
 | **v2 policy skill** | Loaded `config/policy.md` as instructions: taxonomy, decision rules, adjustment formulas, approval thresholds — the missing piece v1 exposed. | `results/v2.json` | Disposition accuracy back to 1.0 (12/12), and every other metric (action, adjustment, evidence, memo) also hit 1.0. **This is the strongest single arm of the five in this run** — a clean sweep, at less than half v4's cost per case. |
 | **v3 verifier** | Added a checking pass with an enumerated list of failure modes and one corrective round back to the analyst, to catch the case where the analyst is confident and wrong. | `results/v3.json` | Disposition fell back to 0.917 (11/12, missed CASE-08 again). The verifier's own corrective JSON failed to parse on 2/12 cases (CASE-04, CASE-11) — the harness fell back to the analyst's pre-correction finding in both, which happened to already be right, so the accuracy number flatters the verifier here rather than proving it worked. Cost per case roughly doubled v2's (0.119 vs 0.059) for no accuracy gain in this run. |
-| **v4 memo writer** | Split the customer letter into its own pass with only the verified finding and the customer's own words, so the letter reads like something a person wrote to a person, not an analyst's case notes. | `results/v4.json` | Memo usability held at 1.0 and the letters read as intended. But disposition stayed at 0.917 (11/12) — and the miss is instructive, not noise: on **CASE-05**, the analyst's first pass correctly called `METER_BYPASS_SUSPECTED`, citing the unsealed junction box exactly as ground truth does. The verifier pushed back, arguing the junction box "describes cable routing, not evidence of tampering" — a plausible-sounding objection that is wrong per `data/ground_truth.json`. The analyst deferred to it and flipped to `NO_ANOMALY` (`trajectories/agent-v4-CASE-05-v4.jsonl`). Wall time per case also more than quadrupled v2's (132.6s vs 30.2s) and cost nearly doubled again. |
-| **Final** | v4, kept as the submitted architecture. | `python -m evals.run_eval --compare` | Not because it scored highest — v2 did, on this run — but because the deliverable is a signed letter, not a disposition code, and v4 is the only arm that produces one from a verified finding. The honest reading: the verifier and writer passes are worth their cost for the artifact they produce and the false-negative bypass case they should have caught, not because they improved the raw accuracy number this time. See the hot take below. |
+| **v4 memo writer** | Split the customer letter into its own pass with only the verified finding and the customer's own words, so the letter reads like something a person wrote to a person, not an analyst's case notes. | `results/run1/v4.json`, `results/run2/v4.json` | Memo usability stayed strong (1.0, then 0.833) and the letters read as intended. But disposition was 0.917 (11/12) on the first run and 0.75 (9/12) on the second — and **the same case, CASE-05, is the failure in both**. The analyst's first pass correctly called `METER_BYPASS_SUSPECTED` both times, citing the unsealed junction box exactly as ground truth does. The verifier pushed back both times with nearly the same wrong objection ("this describes cable routing, not evidence of tampering"), and the analyst deferred both times, flipping to `NO_ANOMALY` (`trajectories/agent-v4-CASE-05-v4.jsonl` and the `-run2` copy). Rerunning was supposed to test whether the first miss was noise; instead it confirmed a repeatable failure mode. Wall time per case also ran 2-4x v2's, and cost nearly doubled. |
+| **Final** | v4, kept as the submitted architecture. | `python -m evals.run_eval --compare` | Not because it scored highest — v2 did, on both runs — but because the deliverable is a signed letter, not a disposition code, and v4 is the only arm that produces one from a verified finding. The honest reading, now confirmed across two runs: v4's verifier reliably catches some things v1/v2 would miss, but it also reliably talks the analyst out of a correct, evidenced bypass call on CASE-05. That is a real defect in the verifier's handling of physical evidence, not a coincidence — see the hot take below for the fix that has not been built yet. |
 
-> Numbers above are one real run against `claude-sonnet-4-5-20250929`
-> (`TRIAGE_PROVIDER=anthropic`, temperature 0, 2026-08-29), not the mock provider. Per
-> REPRODUCE.md, temperature-0 output is not bit-for-bit reproducible and figures can move by a
-> case or so between runs — rerun before treating any single-case difference as settled,
-> especially the baseline/v4 disposition gap above.
+> Numbers above are two independent real runs against `claude-sonnet-4-5-20250929`
+> (`TRIAGE_PROVIDER=anthropic`, temperature 0, 2026-08-29 and 2026-08-30, different API keys),
+> not the mock provider. `results/run1/` and `results/run2/` hold the full per-arm output for
+> baseline and v4 from each run; `results/baseline.json` and `results/v4.json` at the top level
+> are the most recent (run2). Per REPRODUCE.md, temperature-0 output is not bit-for-bit
+> reproducible, but the CASE-05 failure reproduced anyway — that is the point.
 
 ## Expected failure mode and the hot take
 
 The failure mode this workflow was originally built around: an agent given a strong numeric
 signal stops looking for the reason, and theft is the story that fits a consumption cliff. In
-this real run, **v4 got that specific trap right** — CASE-12's consumption collapse is
+both real runs, **v4 got that specific trap right** — CASE-12's consumption collapse is
 correctly called `NO_ANOMALY` because the field notes describe a padlocked building, not a
-tampered meter.
+tampered meter, and that held up twice.
 
-The failure that actually happened in this run is the mirror image of the one the project was
-built to catch, and it is more interesting: **on CASE-05, the analyst was right the first time,
-and the verifier talked it out of it.** The analyst's first pass correctly flagged
-`METER_BYPASS_SUSPECTED`, citing the unsealed junction box beside the meter board — the exact
-evidence `data/ground_truth.json` cites for the same call. The verifier's job is to catch
-unsupported claims, and it raised a plausible-sounding objection ("this describes cable
-routing, not evidence of tampering") that happens to be wrong. The analyst, told a reviewer
-disagreed, deferred rather than re-checked the field note against the ground the objection
-stood on, and the case flipped to `NO_ANOMALY`. Full exchange in
-`trajectories/agent-v4-CASE-05-v4.jsonl`.
+The failure that actually happened is the mirror image of the one the project was built to
+catch, and it reproduced across two independent runs on different days with different API
+keys: **on CASE-05, the analyst was right the first time, and the verifier talked it out of it
+— both times.** The analyst's first pass correctly flagged `METER_BYPASS_SUSPECTED` in both
+runs, citing the unsealed junction box beside the meter board — the exact evidence
+`data/ground_truth.json` cites for the same call. The verifier's job is to catch unsupported
+claims, and both times it raised essentially the same objection ("this describes cable
+routing, not evidence of tampering") that is wrong per the ground truth. The analyst, told a
+reviewer disagreed, deferred rather than re-checked the field note against the ground the
+objection stood on, and the case flipped to `NO_ANOMALY` both times. Full exchange in
+`trajectories/agent-v4-CASE-05-v4.jsonl` (run 1) and `trajectories/agent-v4-CASE-05-v4-run2.jsonl`
+(run 2, argument nearly verbatim). This was checked specifically because REPRODUCE.md warns
+that a single-case difference might be noise — a second run was run to find out, and instead of
+disappearing, the failure repeated with the same reasoning.
 
-The hot take, to confirm against your own run: **a second pass is not automatically a safer
-pass — it is a second place a wrong call can be introduced, and it will be trusted more than
-the first because it looks like scrutiny.** A verifier that can overrule a correct finding with
-an unverified claim of its own is a single point of failure wearing a checker's badge. The
-fix is not removing the verifier — v3/v4 still catch things v1/v2 would miss on other cases —
-it is giving the verifier the same discipline demanded of the analyst: an objection to physical
-evidence needs its own citation, not just confidence. That check does not exist yet in
-`config/policy.md` or the verifier prompt; it is the next thing to build, not a demonstrated
-fix.
+The hot take: **a second pass is not automatically a safer pass — it is a second place a wrong
+call can be introduced, and it will be trusted more than the first because it looks like
+scrutiny.** A verifier that can overrule a correct finding with an unverified claim of its own
+is a single point of failure wearing a checker's badge, and this one does it reliably, not
+occasionally. The fix is not removing the verifier — v3/v4 still catch things v1/v2 would miss
+on other cases, and the overall architecture is kept for that reason. The fix is giving the
+verifier the same discipline demanded of the analyst: an objection to physical evidence needs
+its own citation, not just confidence, and a bypass disposition specifically should not be
+downgraded on a verifier objection without a second, independent check of the field note it is
+disputing. That check does not exist yet in `config/policy.md` or the verifier prompt — it is
+the next thing to build, demonstrated as necessary by two runs, not a demonstrated fix.
 
 ## Ground rules
 
@@ -230,8 +243,13 @@ src/trajectory.py         JSONL trajectory logging
 evals/run_eval.py         run an arm over all cases, score it, save it
 evals/score.py            the scoring rules, shared by every arm
 app/streamlit_app.py      demo shell over the same functions
-results/                  per-arm results and summaries
-trajectories/             one JSONL per run
+results/                  per-arm results and summaries (baseline.json/v4.json = latest run)
+results/run1/, run2/     baseline+v4 results from each of the two real runs, kept for the
+                          CASE-05 reproducibility comparison in the changelog and hot take
+trajectories/             curated representative set: one case across all five arms
+                          (CASE-02), a clean pass, the CASE-05 verifier failure (both runs,
+                          `-run2` suffix on the second), and CASE-12
+trajectories/archive/     the full ~120-file set from both sweeps, kept but out of the way
 ```
 
 See `REPRODUCE.md` to run it from a clean machine.
