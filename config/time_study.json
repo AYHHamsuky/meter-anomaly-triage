@@ -1,7 +1,7 @@
 {
   "_note": "Timings you measured yourself. Leave a value null until you have actually timed it. The eval reports whatever is here and never invents a number.",
   "manual_triage_minutes_per_case": null,
-  "review_baseline_output_minutes_per_case": null,
-  "review_agent_output_minutes_per_case": null,
-  "method": "Describe how you timed it: who, how many cases, stopwatch or log timestamps."
+  "review_baseline_output_minutes_per_case": 0.2444,
+  "review_agent_output_minutes_per_case": 1.2056,
+  "method": "One person (submitter), stopwatch, 3 of 12 cases (CASE-02, CASE-03, CASE-05) via the Streamlit demo shell, timed from reading the panel to a genuine sign-off decision, not just glancing at the disposition line. Per-case raw seconds: baseline review [15, 17, 12] -> avg 14.7s; v4 review [73, 72, 72] -> avg 72.3s. The CASE-05 execution timed here happened to be correct (METER_BYPASS_SUSPECTED, matching ground truth) -- CASE-05 is known from results/run1 and run2 to be wrong on 2 of 3 real executions (see README's hot take), so this timing does not measure how long it takes a reviewer to catch that specific failure; it measures ordinary review time on a case of that complexity. manual_triage_minutes_per_case (working a case from the raw record with no AI) is not yet measured -- a materially different, longer task than reviewing a finished output."
 }
