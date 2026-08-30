@@ -29,11 +29,19 @@ Every dispute needs the same reconciliation, and it is fiddly rather than hard:
 - Read the field notes, because a consumption collapse means one thing when the meter seal is
   broken and something completely different when the building is empty.
 
-Done properly this is twenty to forty minutes per case. Done under pressure it collapses into
-a judgement call, and the two failure modes are expensive in opposite directions. Wave a case
-through and the company loses recoverable revenue. Raise a theft case against a customer whose
-premises was simply vacant and the company creates a dispute it will lose, at a regulator that
-publishes complaint statistics.
+Done properly this is twenty to forty minutes per case.[^1] Done under pressure it collapses
+into a judgement call, and the two failure modes are expensive in opposite directions. Wave a
+case through and the company loses recoverable revenue. Raise a theft case against a customer
+whose premises was simply vacant and the company creates a dispute it will lose, at a
+regulator that publishes complaint statistics.
+
+[^1]: Written as an estimate before any timing was done. The one case since actually timed by
+    hand (CASE-06, a straightforward unbilled-period case, `config/time_study.json`) took 4
+    minutes 41 seconds — well under this range. That single data point doesn't confirm or
+    refute 20-40 minutes as a general figure; it's plausible harder cases (a bypass judgment
+    call like CASE-05, or a busy queue with interruptions) run much longer, but this claim
+    should be read as the original unmeasured estimate it was, not as something this
+    submission has verified at scale.
 
 The output also has to be a letter, in plain language, that a named officer signs. A
 disposition code alone does not close a case.
@@ -136,7 +144,8 @@ Adjustment within 2%      0.583    0.667   0.625     0.917    0.833   0.875    +
 Evidence coverage         0.00     0.00    0.00      1.00     1.00    1.00     +1.00
 Memo usable rate          0.75     0.75    0.75      1.00     0.833   0.917    +0.167
 Review time per case (s)  14.7 (n=3, review only)             72.3 (n=3, review only)  +57.6
-Manual triage (from scratch, no AI)                            not yet measured  config/time_study.json
+Manual triage, no AI (s)  281 (n=1, working the case cold, not reviewing an output)
+                          -> reviewing v4's output instead of doing this by hand: -209s (~4x faster)
 Wall time per case (s)    12.29    12.98   12.6      132.63   58.36   95.5     +82.8
 Cost per case (USD)       0.0164   0.0166  0.0165    0.1106   0.1055  0.108    +0.091 (~6.5x)
 ```
@@ -163,9 +172,15 @@ one-off — but it is a probability, not a guarantee. See the changelog and hot 
 before signing it) is measured on 3 of 12 cases: 14.7s average for the baseline's output,
 72.3s for v4's — about 5x longer, largely because v4's letters are longer and its evidence
 list is worth actually checking against the tools it cites. `manual_triage_minutes_per_case`
-— a person working a case from the raw record with no AI at all, the number behind this
-project's "20-40 minutes" bottleneck claim — has not been measured yet; see the file's
-`method` field for exactly what has and hasn't been timed.
+— a person working a case from the raw record with no AI at all — is measured on one case
+(CASE-06, chosen because it hadn't been seen before, to avoid the timer already knowing the
+answer): **4 minutes 41 seconds**, landing on the correct disposition. That is well under this
+README's original "20-40 minutes" bottleneck claim, which was an unmeasured estimate written
+before any timing was done — it should be read as an estimate that this single data point does
+not support at this scale, not confirmed. What the one measured case does support: reviewing
+v4's output (72.3s) instead of triaging the case by hand (281s) is roughly a 4x speedup on the
+actual task this project targets, on n=1. See the file's `method` field for exactly what has
+and hasn't been timed, and how many cases each number rests on.
 
 ## Improvement changelog
 
